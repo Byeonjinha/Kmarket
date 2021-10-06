@@ -2,58 +2,86 @@
 * {
     margin: 0;                /* 바깥 여백 */
     padding: 0;               /* 내부 여백 */
-    font: normal 12px '돋움체';   /* 폰트 설정  */
+    font: normal 30px '돋움체';   /* 폰트 설정  */
     background-color: #222;
+    font-family: 'Hi Melody', cursive;
 }
 
 ul, ol {list-style : none;}    /* unorderlist , orderlist list-style (속성) 정의 / 기타 알파벳이나 로마문자 , 숫자 등등을 정의해 줄 수 있음 */
-a {text-decoration: none; color: #111;}  /* text-decoration CSS 단축 속성은 글씨의 장식(선) 색을 지정  none 대신 green wavy underline underline overline #FF3028 등을 넣을 수 있음  */
+a {text-decoration: none; color: rgb(255, 255, 255);}  /* text-decoration CSS 단축 속성은 글씨의 장식(선) 색을 지정  none 대신 green wavy underline underline overline #FF3028 등을 넣을 수 있음  */
 
 #wrapper {        /* #( id선택자   , .은 클래스선택자임 )  wrapper  */   
     width: 100%;  /*  넓이 100% */
+    background-image: url(../img/korea-g6bfd67397_1920.jpg);
+    height: 100vw;
+    background-size: cover;
 }
 
 /* header 속성정의 */
 header {
     width: 100%;
     height: 197px;      /* 위에서 197px 의 거리 */
+    background-image: url(../img/korea-g6bfd67397_1920.jpg );  
+    background-size: cover;
 }
 
 header > div {    
     width: 100%;            
     box-sizing: border-box;  /* box-sizing은 박스의 크기를 어떤 것을 기준으로 계산할지를 정하는 속성 // border-box 는  테두리를 기준으로 크기를 정함*/
-}
+
+    height: 100vw;
+    background-size: cover;
+  }
+
 
 header > .top {     /* header 의 .(클래스 선택자) top */
-    height: 35px;
+  
+    height: 100px;
     border-bottom: 1px solid #e9e9e9;  /*요소 테두리의 아래쪽 스타일을 지정 1px , solid(실선) , 선색  */
+    z-index: 1  ;
 }
 
 header > .top > div {
-    width: 1200px;
+    width: 930px;
     height: 100%;
     margin: 0 auto;     /* margin 바깥여백 0  , auto는 가로 중앙에 배치한다는 의미 */        
-    text-align: right;  /* text-align 속성은 텍스트의 정렬 방향을 의미 */
+    text-align:center;  /* text-align 속성은 텍스트의 정렬 방향을 의미 */
+    
 }
 
 header > .top > div > a {     /* <a> 태그는 하이퍼링크를 걸어주는 태그 */
+    vertical-align: text-bottom;
     display: inline-block; /* display 속성은 웹페이지 상에서 엘리먼트들이 어떻게 보여지고 다른 엘리먼트와 어떻게 상호 배치되는지를 결정*/
     /* 속성이 inline으로 지정된 엘리먼트는 전후 줄바꿈 없이 한 줄에 다른 엘리먼트들과 나란히 배치 */
     /* 속성이 block으로 지정된 엘리먼트는 전후 줄바꿈이 들어가 다른 엘리먼트들을 다른 줄로 밀어내고 혼자 한 줄을 차지 */    
     /* 속성이 inline-block으로 지정된 엘리먼트는 기본적으로 inline 엘리먼트처럼 전후 줄바꿈 없이 한 줄에 다른 엘리먼트들과 나란히 배치 */
-
     height: 100%;
-    line-height: 35px;  /* line-height는 줄 높이를 정하는 속성 */
+    line-height: 100px;  /* line-height는 줄 높이를 정하는 속성 */
+    width: 200px;
     border-left: 1px solid #e9e9e9; /* border-left 는 요소의 왼쪽 테두리를 설정 */
+    border-right: 1px solid #e9e9e9; 
     padding: 0 10px;      /* 내부 여백 */
-    color: #646464;
+    color: #d3d3d3;
+
+    
+}
+header > .top > div > a:nth-child(1).button {
+  width: 200px; 
+	height: 123px;  
+	position: fixed;  
+	left:calc(50% - 100px); 
+	top:-123px;
+		transition:0.5s;
+	-webkit-transition:0.5s;
+	-moz-transition:0.5s;
 }
 header > .top > div > a:last-child {  /* <a> 태그는 하이퍼링크를 걸어주는 태그 */
     border-right: 1px solid #e9e9e9;  /* border-right 는 요소의 오른쪽 테두리를 설정 */
+
 }
 
 header > .top > div > a:hover { /* a:link 방문하기전의 링크 / a:visited  방문한 링크 / a:hover : 링크에 마우스 포인터를 올려 놓았을 때 / a:active : 링크를 마우스로 클릭한 순간 */
-    color: #333;
+    color: rgb(145, 144, 144);
     border-bottom: 1px solid #444;
 }
 
@@ -116,11 +144,14 @@ header > .menu > div {
     height: 100%;
     margin: 0 auto;
 }
-
+header > #background_IMG {position: relative;    background-size: cover; z-index: 0;}
 header > .menu > div > ul {
     display: inline-block;
     margin-top: 16px;
 }        
+
+
+
 header > .menu > div > ul:nth-child(1) {float: left;}    /* 히트상품 , 추천상품, 최신상품, 인기상품 , 할인상품*/
 header > .menu > div > ul:nth-child(2) {float: right;}   /*쿠폰존 , 사용후기, 개인결제, 고객센터, FAQ */
 header > .menu > div > ul > li {float: left;}      /* 목록 왼쪽에 띄움 */
@@ -149,53 +180,13 @@ main {
 
 /* main - aside 속성정의 */
 main > aside {    /* main > aside 선택  (카테고리 메뉴 + 베스트메뉴) */
-    float: right ; /* 왼쪽에 띄움*/
+    position: static;
+    left : 0px ;
+    float: left ; /* 왼쪽에 띄움*/
     width: 0px; 
     height: 100%;
 }
-main > aside > .category {
-    position: relative;
-    width: 100%;
-    height: 425px;
-    background: #333949;  /* 배경색 설정*/
-}
-main > aside > .category > li {            
-    width: 100%;
-    height: 40px;
-    padding-left: 10px;
-    line-height: 40px; 
-    color: #ccc;             
-    font-size: 13px;   /* 글포인트*/
-    font-weight: bold; /* 글씨체 굵게 */
-    border-bottom: 1px solid #2b313f;
-    box-sizing: border-box;          /* 여백으로 box-size 결정 */    
-}
-main > aside > .category > li > a {
-    display: block;  
-/* 속성이 inline으로 지정된 엘리먼트는 전후 줄바꿈 없이 한 줄에 다른 엘리먼트들과 나란히 배치 */
-/* 속성이 block으로 지정된 엘리먼트는 전후 줄바꿈이 들어가 다른 엘리먼트들을 다른 줄로 밀어내고 혼자 한 줄을 차지 */    
-/* 속성이 inline-block으로 지정된 엘리먼트는 기본적으로 inline 엘리먼트처럼 전후 줄바꿈 없이 한 줄에 다른 엘리먼트들과 나란히 배치 */
-    width: 100%;
-    height: 100%;
-    line-height: 40px;            
-    color: #ccc;
-    font-size: 13px;
-    font-weight: bold;
-}
-main > aside > .category > li > a:hover {   /* a:hover : 링크에 마우스 포인터를 올려 놓았을 때*/
-    background: #2b313f;
-    color: #fff;
-}
 
-
-main > aside > .category > li > a:hover + ol { display: block; }
-
-main > aside > .category ol:hover { display: block; }
-
-main > aside > .category > li i {  /* 카테고리 하위 아이콘 속성*/
-    font-size: 16px;
-    margin-right: 12px; /*아이콘 우측여백*/
-}
 
 main > aside > .category ol {   /*패션, 가전, 식품, 홈 등등 상위 카테고리 밑의 하위카테고리*/
     position: absolute;
@@ -223,9 +214,13 @@ main > aside > .category ol > li > a:hover {  /* a:hover : 링크에 마우스 �
 
 /* 베스트상품 */
 main > aside > .best {
-    width: 215px;
+    position: fixed;
+    top : 200px;
+    left: 100px;
+    font-size: 10px;
+    width: 240px;
     height: auto;
-    border: 1px solid #dbdbdb;
+    border: 2px solid #dbdbdb;
     box-sizing: border-box;
     box-shadow: 0 0 5px rgba(55, 55, 5, 0.2);    /* 베스트 상품 전체 테두리 음영 */
 }
@@ -252,72 +247,21 @@ main > aside > .best > ol > li {
     margin-bottom: 16px;
 }
 
-    
-main > aside > .best > ol > li > a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
 
 main > aside > .best > ol > li > a:hover h2 {   /* 리스트 아이템에 마우스 갖다댈 때 */
-    text-decoration: underline;
-}
-main > aside > .best > ol > li > a > .thumb {   /* 베스트상품 하위 리스트 아이템 순위 썸네일*/
-    float: left ;
-    position: relative;
-    width: 50px;
-    height: 50px;
-    overflow: hidden;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
+    text-decoration: underline;}
 
-main > aside > .best > ol > li:first-child > a > .thumb {  /* 베스트상품 하위 리스트 아이템 첫번째 썸네일*/
-    position: relative;
-    float: none;   /* none (기본값) : 정렬하지 않는다. */
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    margin: 0 auto;
-}
-main > aside > .best > ol > li > a > .thumb > i { /* 베스트상품 하위 리스트 아이템  썸네일 등수 아이콘*/
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: inline-block;
-    width: 16px;
-    height: 20px;
-    font-size: 16px;
-    padding: 0;
-    color: #ef3e42;
-    border-bottom: 1px solid #ef3e42;
-    font-weight: 500;
-    font-style: italic;  /*이텔릭체 사용 기울임 노말 등등 사용가능*/
-    text-align: center;  /* 속성은 텍스트의 정렬 방향을 의미 */
-    line-height: 18px;
-}
-main > aside > .best > ol > li:first-child > a > .thumb > i {
-    width: 35px;
-    height: 26px;
-}
 
-main > aside > .best > ol > li > a > .thumb > img {
-    width: 100%;
-}
 
-main > aside > .best > ol > li > a > article {
-    float: left;
-    width: 148px;
-    padding-left: 6px;
-    box-sizing: border-box;
-}
-
-main > aside > .best > ol > li > a h2 {
-    margin-top: 4px;
+main > aside > .best >a {
+    font-size: 20px;
+    margin-top: 10px;
     text-overflow: ellipsis; /* 글자가 넘을 경우 생략부호를 표시함  ex)...*/
     white-space: nowrap;  /* white-space는 스페이스와 탭, 줄바꿈, 자동줄바꿈을 어떻게 처리할지 정하는 속성 */
     overflow: hidden;
+    
+
+    
 }
 main > aside > .best > ol > li > a .org_price {}   /* 원가 */
 main > aside > .best > ol > li > a .org_price > del::after {content: "원";}
@@ -353,12 +297,14 @@ main > section {
     width: 985px;
     height: auto;
     box-sizing: border-box;
+    color :ivory;
 }
 
 main > section > section {
     width: 100%;
     height: auto;
     overflow: hidden;
+    
 }
 main > section > section > article {
     float: left;
